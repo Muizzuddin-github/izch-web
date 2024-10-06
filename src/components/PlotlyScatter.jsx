@@ -6,7 +6,16 @@ const PlotlyScatter = ({ data, title, nameVertikal, nameHorizontal }) => {
     <Plot
       data={[data]}
       config={{
-        staticPlot: true,
+        displayModeBar: false, // Sembunyikan toolbar interaksi
+        staticPlot: false, // Izinkan hover
+        editable: false, // Nonaktifkan mode edit
+        modeBarButtonsToRemove: [
+          "zoom2d",
+          "pan2d",
+          "select2d",
+          "lasso2d",
+          "resetScale2d",
+        ],
       }}
       layout={{
         width: 1800,

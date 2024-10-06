@@ -42,20 +42,20 @@ const Hyperbloom = () => {
     y: peningkatan,
     type: "scatter",
     mode: "lines+markers+text",
-    name: "Peningkatan",
+    name: "",
     text: peningkatan,
     textposition: "top right",
-    hovertemplate: "%{y}%",
+    hovertemplate: "%{x} EM, %{y}% Peningkatan",
   };
   const data2 = {
     x: elementalMastery,
     y: dataDMG,
     type: "scatter",
     mode: "lines+markers+text",
-    name: "Damage",
+    name: "",
     text: dataDMGShow,
     textposition: "top left",
-    hovertemplate: "%{y}",
+    hovertemplate: "%{x} EM, %{y} Damage",
   };
   return (
     <section>
