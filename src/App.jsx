@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Hyperbloom from "./pages/Hyperbloom";
+import Home from "./genshinPage/Home";
+import Hyperbloom from "./genshinPage/Hyperbloom";
+import EnergyRechargeCalculator from "./genshinPage/EnergyRechargeCalculator";
+import Genshin from "./genshinPage/Genshin";
 
 function App() {
   return (
@@ -8,7 +10,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/hyperbloom" element={<Hyperbloom />} />
+          <Route path="/genshin" element={<Genshin />}>
+            <Route path="hyperbloom" element={<Hyperbloom />} />
+            <Route
+              path="energy-recharge-calculator"
+              element={<EnergyRechargeCalculator />}
+            />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
