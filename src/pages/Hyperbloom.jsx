@@ -59,7 +59,7 @@ const Hyperbloom = () => {
   };
   return (
     <section>
-      <section className="ml-20 mt-5 absolute top-0 z-10 ">
+      <section className="ml-6 mt-5 absolute top-0 z-10 ">
         <p className="font-bold">Level character: 90</p>
         <p className="font-bold">Enemy res: 10%</p>
       </section>
