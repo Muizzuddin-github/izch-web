@@ -63,21 +63,23 @@ const Hyperbloom = () => {
         <p className="font-bold">Level character: 90</p>
         <p className="font-bold">Enemy res: 10%</p>
       </section>
-      <section className="p-10 min-w-screen-sm overflow-scroll">
+      <section className="p-10 min-w-screen-sm overflow-x-scroll">
         <PlotlyScatter
           data={data1}
           title={"Grafik Deminishing Return"}
           nameHorizontal={"Elemental mastery"}
           nameVertikal={"Peningkatan"}
         />
+        {window.innerWidth <= 1669 ? <p>Geser</p> : ""}
       </section>
-      <section className="p-10 min-w-screen-sm overflow-scroll">
+      <section className="p-10 min-w-screen-sm overflow-x-scroll">
         <PlotlyScatter
           data={data2}
           title={"Grafik Damage Hyperbloom + Deepwood Memories"}
           nameHorizontal={"Elemental mastery"}
           nameVertikal={"Damage"}
         />
+        {window.innerWidth <= 1669 ? <p>Geser</p> : ""}
       </section>
     </section>
   );

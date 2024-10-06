@@ -5,6 +5,9 @@ const PlotlyScatter = ({ data, title, nameVertikal, nameHorizontal }) => {
   return (
     <Plot
       data={[data]}
+      config={{
+        staticPlot: true,
+      }}
       layout={{
         width: 1800,
         height: 800,
