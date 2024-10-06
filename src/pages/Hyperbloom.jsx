@@ -63,7 +63,7 @@ const Hyperbloom = () => {
         <p className="font-bold">Level character: 90</p>
         <p className="font-bold">Enemy res: 10%</p>
       </section>
-      <section className="p-10 min-w-screen-sm overflow-x-scroll">
+      <section className="p-10 min-w-screen-sm overflow-x-scroll geser:overflow-auto">
         <PlotlyScatter
           data={data1}
           title={"Grafik Deminishing Return"}
@@ -72,7 +72,7 @@ const Hyperbloom = () => {
         />
         {window.innerWidth <= 1669 ? <p>Geser</p> : ""}
       </section>
-      <section className="p-10 min-w-screen-sm overflow-x-scroll">
+      <section className="p-10 min-w-screen-sm overflow-x-scroll geser:overflow-auto">
         <PlotlyScatter
           data={data2}
           title={"Grafik Damage Hyperbloom + Deepwood Memories"}
