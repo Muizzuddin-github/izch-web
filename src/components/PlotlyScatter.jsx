@@ -10,16 +10,19 @@ const PlotlyScatter = ({ data, title, nameVertikal, nameHorizontal }) => {
         staticPlot: false, // Izinkan hover
         editable: false, // Nonaktifkan mode edit
         modeBarButtonsToRemove: [
-          "zoom2d",
-          "pan2d",
-          "select2d",
-          "lasso2d",
-          "resetScale2d",
+          "zoom2d", // Hapus tombol zoom in/out
+          "pan2d", // Hapus tombol pan
+          "select2d", // Hapus tombol select
+          "lasso2d", // Hapus tombol lasso
+          "resetScale2d", // Hapus tombol reset scale
+          "toggleSpikelines", // Hapus tombol toggle spike lines
         ],
       }}
       layout={{
         width: 1800,
         height: 800,
+        dragmode: false, // Nonaktifkan drag mode
+        hovermode: "closest", // Hover pada titik terdekat
         title: {
           text: title,
           font: {
