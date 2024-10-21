@@ -26,6 +26,8 @@ const ERCalculator = () => {
 
     if (isFinite(result)) {
       setKebutuhanEnergy(result.toFixed(2));
+    } else {
+      setKebutuhanEnergy("0.00");
     }
   }, [
     onFieldElemenSama,
