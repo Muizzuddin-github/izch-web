@@ -55,7 +55,7 @@ const ERCalculator = () => {
                   e.target.value = 0;
                 } else if (
                   e.target.value[0] === "0" &&
-                  e.target.value.length > 0
+                  e.target.value.length > 1
                 ) {
                   e.target.value = e.target.value.slice(1);
                 }
@@ -76,7 +76,7 @@ const ERCalculator = () => {
                   e.target.value = 0;
                 } else if (
                   e.target.value[0] === "0" &&
-                  e.target.value.length > 0
+                  e.target.value.length > 1
                 ) {
                   e.target.value = e.target.value.slice(1);
                 }
@@ -96,7 +96,7 @@ const ERCalculator = () => {
                   e.target.value = 0;
                 } else if (
                   e.target.value[0] === "0" &&
-                  e.target.value.length > 0
+                  e.target.value.length > 1
                 ) {
                   e.target.value = e.target.value.slice(1);
                 }
@@ -116,7 +116,7 @@ const ERCalculator = () => {
                   e.target.value = 0;
                 } else if (
                   e.target.value[0] === "0" &&
-                  e.target.value.length > 0
+                  e.target.value.length > 1
                 ) {
                   e.target.value = e.target.value.slice(1);
                 }
@@ -136,7 +136,7 @@ const ERCalculator = () => {
                   e.target.value = 0;
                 } else if (
                   e.target.value[0] === "0" &&
-                  e.target.value.length > 0
+                  e.target.value.length > 1
                 ) {
                   e.target.value = e.target.value.slice(1);
                 }
@@ -156,7 +156,7 @@ const ERCalculator = () => {
                   e.target.value = 0;
                 } else if (
                   e.target.value[0] === "0" &&
-                  e.target.value.length > 0
+                  e.target.value.length > 1
                 ) {
                   e.target.value = e.target.value.slice(1);
                 }
@@ -192,7 +192,7 @@ const ERCalculator = () => {
                   e.target.value = 0;
                 } else if (
                   e.target.value[0] === "0" &&
-                  e.target.value.length > 0
+                  e.target.value.length > 1
                 ) {
                   e.target.value = e.target.value.slice(1);
                 }
@@ -214,7 +214,7 @@ const ERCalculator = () => {
                   e.target.value = 0;
                 } else if (
                   e.target.value[0] === "0" &&
-                  e.target.value.length > 0
+                  e.target.value.length > 1
                 ) {
                   e.target.value = e.target.value.slice(1);
                 }
