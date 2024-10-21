@@ -1,49 +1,11 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import ERCalculator from "../components/ERCalculator";
 
 const EnergyRechargeCalculator = () => {
-  const [onFieldElemenSama, setOnFieldElemenSama] = useState(0);
-  const [offFieldElemenSama, setOffFieldElemenSama] = useState(0);
-  const [onFieldElemenBerbeda, setOnFieldElemenBerbeda] = useState(0);
-  const [offFieldElemenBerbeda, setOffFieldElemenBerbeda] = useState(0);
-  const [onFieldPutih, setOnFieldPutih] = useState(0);
-  const [offFieldPutih, setOffFieldPutih] = useState(0);
-  const [penambahanTotalEnergy, setPenambahanTotalEnergy] = useState(0);
-  const [kebutuhanEnergy, setKebutuhanEnergy] = useState("0.00");
-  const [energyConst, setEnergyConst] = useState(0);
-
-  useEffect(() => {
-    const result =
-      (energyConst /
-        (onFieldElemenSama +
-          offFieldElemenSama +
-          onFieldElemenBerbeda +
-          offFieldElemenBerbeda +
-          onFieldPutih +
-          offFieldPutih +
-          penambahanTotalEnergy)) *
-      100;
-
-    if (isFinite(result)) {
-      setKebutuhanEnergy(result.toFixed(2));
-    }
-  }, [
-    onFieldElemenSama,
-    offFieldElemenSama,
-    onFieldElemenBerbeda,
-    offFieldElemenBerbeda,
-    onFieldPutih,
-    offFieldPutih,
-    penambahanTotalEnergy,
-    kebutuhanEnergy,
-    energyConst,
-  ]);
-
   return (
     <section>
       <section className="bg-white dark:bg-gray-900">
-        <div className="py-0 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-          <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        <div className="px-4 mx-auto max-w-screen-xl text-center py-16 lg:py-20">
+          <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-6xl dark:text-white">
             Genshin energy recharge calculator
           </h1>
           <p className="mt-10 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
@@ -53,157 +15,106 @@ const EnergyRechargeCalculator = () => {
         </div>
       </section>
 
-      <section>
-        <section className="flex justify-center mt-5 border p-10">
-          <form className="text-center">
-            <section className="flex gap-10">
-              <section>
-                <p>On field elemen sama</p>
-                <input
-                  type="number"
-                  className="border border-gray-400 p-1 rounded-md outline-none"
-                  defaultValue={0}
-                  min={0}
-                  onChange={(e) => {
-                    if (e.target.value[0] === "0") {
-                      e.target.value = e.target.value.slice(1);
-                    }
+      <ERCalculator />
 
-                    setOnFieldElemenSama(+e.target.value * 3);
-                  }}
-                />
-              </section>
-              <section>
-                <p>Off field elemen sama</p>
-                <input
-                  type="number"
-                  className="border border-gray-400 p-1 rounded-md outline-none"
-                  defaultValue={0}
-                  min={0}
-                  onChange={(e) => {
-                    if (e.target.value[0] === "0") {
-                      e.target.value = e.target.value.slice(1);
-                    }
-                    setOffFieldElemenSama(+e.target.value * 1.8);
-                  }}
-                />
-              </section>
-              <section>
-                <p>On field berbeda elemen</p>
-                <input
-                  type="number"
-                  className="border border-gray-400 p-1 rounded-md outline-none"
-                  defaultValue={0}
-                  min={0}
-                  onChange={(e) => {
-                    if (e.target.value[0] === "0") {
-                      e.target.value = e.target.value.slice(1);
-                    }
-                    setOnFieldElemenBerbeda(+e.target.value * 1);
-                  }}
-                />
-              </section>
-              <section>
-                <p>Off field berbeda elemen</p>
-                <input
-                  type="number"
-                  className="border border-gray-400 p-1 rounded-md outline-none"
-                  defaultValue={0}
-                  min={0}
-                  onChange={(e) => {
-                    if (e.target.value[0] === "0") {
-                      e.target.value = e.target.value.slice(1);
-                    }
-                    setOffFieldElemenBerbeda(+e.target.value * 0.6);
-                  }}
-                />
-              </section>
-              <section>
-                <p>On field putih</p>
-                <input
-                  type="number"
-                  className="border border-gray-400 p-1 rounded-md outline-none"
-                  defaultValue={0}
-                  min={0}
-                  onChange={(e) => {
-                    if (e.target.value[0] === "0") {
-                      e.target.value = e.target.value.slice(1);
-                    }
-                    setOnFieldPutih(+e.target.value * 2);
-                  }}
-                />
-              </section>
-              <section>
-                <p>Off field putih</p>
-                <input
-                  type="number"
-                  className="border border-gray-400 p-1 rounded-md outline-none"
-                  defaultValue={0}
-                  onChange={(e) => {
-                    if (e.target.value[0] === "0") {
-                      e.target.value = e.target.value.slice(1);
-                    }
-                    setOffFieldPutih(+e.target.value * 1.2);
-                  }}
-                />
-              </section>
-            </section>
+      <section className="p-10 flex justify-center mt-20">
+        <section>
+          <h2 className="font-semibold text-xl text-center">Penjelasan</h2>
 
-            <section className="flex gap-10 mt-5 justify-center">
-              <section>
-                <p className="font-semibold">Total energy</p>
-                <p>
-                  {(
-                    onFieldElemenSama +
-                    offFieldElemenSama +
-                    onFieldElemenBerbeda +
-                    offFieldElemenBerbeda +
-                    onFieldPutih +
-                    offFieldPutih +
-                    penambahanTotalEnergy
-                  ).toFixed(2)}
-                </p>
-              </section>
-              <section>
-                <p>Penambahan total energy</p>
-                <input
-                  type="number"
-                  className="border border-gray-400 p-1 rounded-md outline-none"
-                  defaultValue={0}
-                  onChange={(e) => {
-                    if (e.target.value[0] === "0") {
-                      e.target.value = e.target.value.slice(1);
-                    }
-                    setPenambahanTotalEnergy(+e.target.value);
-                  }}
-                />
-              </section>
+          <section className=" mt-5 flex flex-col gap-4 m-auto">
+            <section className="border rounded-md p-2 shadow-md">
+              <p className="font-medium">On field elemen sama</p>
+              <hr />
+              <p className="mt-2">
+                karakter menangkap particle secara on field
+              </p>
             </section>
+            <section className="border rounded-md p-2 shadow-md">
+              <p className="font-medium">Off field elemen sama</p>
+              <hr />
+              <p className="mt-2">
+                karakter menangkap particle secara off field tetapi elemennya
+                sama
+              </p>
+            </section>
+            <section className="border rounded-md p-2 shadow-md">
+              <p className="font-medium">On field elemen berbeda</p>
+              <hr />
+              <p className="mt-2">
+                karakter menangkap particle secara on field tetapi elemennya
+                berbeda
+              </p>
+            </section>
+            <section className="border rounded-md p-2 shadow-md">
+              <p className="font-medium">Off field elemen berbeda</p>
+              <hr />
+              <p className="mt-2">
+                karakter menangkap particle secara off field tetapi elemennya
+                berbeda
+              </p>
+            </section>
+            <section className="border rounded-md p-2 shadow-md">
+              <p className="font-medium">On field putih (Clear particle)</p>
+              <hr />
+              <p className="mt-2">
+                karakter menangkap particle secara on field tetapi berbentuk
+                clear particle seperti favonius
+              </p>
+            </section>
+            <section className="border rounded-md p-2 shadow-md">
+              <p className="font-medium"> Off field putih (Clear particle)</p>
+              <hr />
+              <p className="mt-2">
+                karakter menangkap particle secara off field tetapi berbentuk
+                clear particle seperti favonius
+              </p>
+            </section>
+            <section className="border rounded-md p-2 shadow-md">
+              <p className="font-medium">
+                {" "}
+                Penambahan total energy (Flat energy)
+              </p>
+              <hr />
+              <p className="mt-2">
+                Energy yang langsung masuk ke burst, seperti 2 set artefak
+                scroll of the hero of cinder city
+              </p>
+            </section>
+          </section>
+        </section>
+      </section>
 
-            <section className="flex justify-center mt-5">
-              <section>
-                <p>Energy const</p>
-                <input
-                  type="number"
-                  className="border border-gray-400 p-1 rounded-md outline-none"
-                  defaultValue={0}
-                  onChange={(e) => {
-                    if (e.target.value[0] === "0") {
-                      e.target.value = e.target.value.slice(1);
-                    }
-                    setEnergyConst(+e.target.value);
-                  }}
-                />
-              </section>
-            </section>
-
-            <section className="mt-5">
-              <section>
-                <p className="font-bold">Kebutuhan energy recharge</p>
-                <p>{kebutuhanEnergy}%</p>
-              </section>
-            </section>
-          </form>
+      <section className="p-5 flex justify-center mt-40">
+        <section className="text-center text-sm">
+          <p>
+            Created by{" "}
+            <a
+              href="https://www.youtube.com/@izCh."
+              target="_blank"
+              className="font-semibold"
+            >
+              @Iz Ch.
+            </a>
+          </p>
+          <hr className="my-2" />
+          <p>Reference</p>
+          <section>
+            <a
+              href="https://library.keqingmains.com/combat-mechanics/energy"
+              target="_blank"
+              className="font-medium"
+            >
+              Keqing mains
+            </a>
+            <p className="mx-2 inline-block">&</p>
+            <a
+              href="https://genshin-impact.fandom.com/wiki/Energy"
+              target="_blank"
+              className="font-medium"
+            >
+              Genshin Impact Wiki
+            </a>
+          </section>
         </section>
       </section>
     </section>
