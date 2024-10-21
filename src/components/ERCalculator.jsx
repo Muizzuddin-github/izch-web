@@ -24,7 +24,6 @@ const ERCalculator = () => {
           penambahanTotalEnergy)) *
       100;
 
-    console.log(result);
     if (isFinite(result)) {
       setKebutuhanEnergy(result.toFixed(2));
     } else {
