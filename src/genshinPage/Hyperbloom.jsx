@@ -29,7 +29,9 @@ const Hyperbloom = () => {
       transformatifReaction("Hyperbloom", 90, i) *
       enemyResMult(fromPercentage("10%"), fromPercentage("0%"));
     dataDMGNoDeepwood.push(+resultNoDeepwood.toFixed(0));
-    dataDMGNoDeepwoodShow.push(+resultNoDeepwood.toFixed(0));
+    dataDMGNoDeepwoodShow.push(
+      formatNumber(+resultNoDeepwood.toFixed(0)) + "k"
+    );
 
     elementalMastery.push(i);
 
@@ -54,7 +56,7 @@ const Hyperbloom = () => {
     name: "",
     text: peningkatan,
     textposition: "top right",
-    hovertemplate: "%{x} EM, %{y}% Peningkatan",
+    hovertemplate: "%{x} EM",
   };
 
   const data2 = {
