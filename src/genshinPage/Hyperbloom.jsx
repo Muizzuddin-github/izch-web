@@ -9,18 +9,27 @@ import {
 
 const Hyperbloom = () => {
   const peningkatan = [];
-  const dataDMG = [];
+  const dataDMGDeepwood = [];
   const elementalMastery = [];
-  const dataDMGShow = [];
+  const dataDMGDeepwoodShow = [];
+
+  const dataDMGNoDeepwood = [];
+  const dataDMGNoDeepwoodShow = [];
 
   let incre = 0;
 
   for (let i = 0; i <= 1800; i += 100) {
-    const result =
+    const resultDeepwood =
       transformatifReaction("Hyperbloom", 90, i) *
       enemyResMult(fromPercentage("10%"), fromPercentage("30%"));
-    dataDMG.push(+result.toFixed(0));
-    dataDMGShow.push(formatNumber(+result.toFixed(0)) + "k");
+    dataDMGDeepwood.push(+resultDeepwood.toFixed(0));
+    dataDMGDeepwoodShow.push(formatNumber(+resultDeepwood.toFixed(0)) + "k");
+
+    const resultNoDeepwood =
+      transformatifReaction("Hyperbloom", 90, i) *
+      enemyResMult(fromPercentage("10%"), fromPercentage("0%"));
+    dataDMGNoDeepwood.push(+resultNoDeepwood.toFixed(0));
+    dataDMGNoDeepwoodShow.push(+resultNoDeepwood.toFixed(0));
 
     elementalMastery.push(i);
 
@@ -28,8 +37,8 @@ const Hyperbloom = () => {
       peningkatan.push("0%");
     } else {
       const perbedaan = calculateDamageDifferencePercentageIncrease(
-        dataDMG[incre - 1],
-        result
+        dataDMGDeepwood[incre - 1],
+        resultDeepwood
       );
       peningkatan.push(perbedaan + "%");
     }
@@ -47,16 +56,29 @@ const Hyperbloom = () => {
     textposition: "top right",
     hovertemplate: "%{x} EM, %{y}% Peningkatan",
   };
+
   const data2 = {
     x: elementalMastery,
-    y: dataDMG,
+    y: dataDMGNoDeepwood,
     type: "scatter",
     mode: "lines+markers+text",
     name: "",
-    text: dataDMGShow,
+    text: dataDMGNoDeepwoodShow,
     textposition: "top left",
     hovertemplate: "%{x} EM, %{y} Damage",
   };
+
+  const data3 = {
+    x: elementalMastery,
+    y: dataDMGDeepwood,
+    type: "scatter",
+    mode: "lines+markers+text",
+    name: "",
+    text: dataDMGDeepwoodShow,
+    textposition: "top left",
+    hovertemplate: "%{x} EM, %{y} Damage",
+  };
+
   return (
     <section>
       <section className="ml-6 mt-5 absolute top-0 z-10 ">
@@ -75,6 +97,15 @@ const Hyperbloom = () => {
       <section className="p-10 min-w-screen-sm overflow-x-scroll geser:overflow-auto">
         <PlotlyScatter
           data={data2}
+          title={"Grafik Damage Hyperbloom"}
+          nameHorizontal={"Elemental mastery"}
+          nameVertikal={"Damage"}
+        />
+        {window.innerWidth <= 1669 ? <p>Geser</p> : ""}
+      </section>
+      <section className="p-10 min-w-screen-sm overflow-x-scroll geser:overflow-auto">
+        <PlotlyScatter
+          data={data3}
           title={"Grafik Damage Hyperbloom + Deepwood Memories"}
           nameHorizontal={"Elemental mastery"}
           nameVertikal={"Damage"}
