@@ -118,11 +118,11 @@ const Vaporize = () => {
               <section className="flex w-fit flex-col gap-2">
                 <section className="flex w-fit gap-20">
                   <section>
-                    <img src="/public/Element_Cryo.webp" alt="elemen cryo" />
+                    <img src="/Element_Cryo.webp" alt="elemen cryo" />
                     <p>Pemicu</p>
                   </section>
                   <section>
-                    <img src="/public/Element_Pyro.webp" alt="elemen pyro" />
+                    <img src="/Element_Pyro.webp" alt="elemen pyro" />
                     <p>Musuh</p>
                   </section>
                 </section>
