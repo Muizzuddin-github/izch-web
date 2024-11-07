@@ -3,6 +3,7 @@ import Home from "./genshinPage/Home";
 import Hyperbloom from "./genshinPage/Hyperbloom";
 import EnergyRechargeCalculator from "./genshinPage/EnergyRechargeCalculator";
 import Genshin from "./genshinPage/Genshin";
+import Vaporize from "./genshinPage/Vaporize";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               path="energy-recharge-calculator"
               element={<EnergyRechargeCalculator />}
             />
+            <Route path="vaporize" element={<Vaporize />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -9,7 +9,7 @@ export const calculateDamageDifferencePercentageIncrease = (
   const difference = damage2 - damage1;
   const percentage = (difference / damage1) * 100;
 
-  return +percentage.toFixed(0);
+  return +percentage.toFixed(2);
 };
 
 export const formatNumber = (nm) => {
