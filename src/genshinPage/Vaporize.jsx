@@ -54,46 +54,99 @@ const Vaporize = () => {
       </section>
 
       <section className="text-center">
-        <h1 className="pt-10 font-medium text-2xl">Reaksi Vaporize</h1>
-        <p className="mt-4">
-          Reaksi vaporize terjadi jika element pyro bertemu dengan elemen hydro
-          (<strong>Vaporize</strong>) atau element hydro bertemu dengan element
-          pyro (<strong>Forward vaporize</strong>){" "}
-        </p>
+        <section>
+          <section>
+            <h1 className="pt-10 font-medium text-2xl">Reaksi Vaporize</h1>
+            <p className="mt-4">
+              Reaksi vaporize terjadi jika element pyro bertemu dengan elemen
+              hydro (<strong>Reverse vaporize</strong>) atau element hydro
+              bertemu dengan element pyro (<strong>Forward vaporize</strong>){" "}
+            </p>
+          </section>
 
-        <section className="flex justify-center mt-20">
-          <section className="flex gap-10 flex-col">
-            <section className="flex w-fit flex-col gap-2">
-              <section className="flex w-fit gap-20">
-                <section>
-                  <img src="/Element_Pyro.webp" alt="elemen pyro" />
-                  <p>Pemicu</p>
+          <section className="flex justify-center mt-10">
+            <section className="flex gap-10 flex-col">
+              <section className="flex w-fit flex-col gap-2">
+                <section className="flex w-fit gap-20">
+                  <section>
+                    <img src="/Element_Pyro.webp" alt="elemen pyro" />
+                    <p>Pemicu</p>
+                  </section>
+                  <section>
+                    <img src="/Element_Hydro.webp" alt="elemen hydro" />
+                    <p>Musuh</p>
+                  </section>
                 </section>
-                <section>
-                  <img src="/Element_Hydro.webp" alt="elemen hydro" />
-                  <p>Musuh</p>
+                <section className="text-center text-sm font-medium">
+                  <p>Vaporize dipicu pyro</p>
+                  <p>Reaksi multiplier x 1.5</p>
                 </section>
               </section>
-              <section className="text-center text-sm font-medium">
-                <p>Vaporize dipicu pyro</p>
-                <p>Reaksi multiplier x 1.5</p>
+
+              <section className="flex w-fit flex-col gap-2">
+                <section className="flex w-fit gap-20">
+                  <section>
+                    <img src="/Element_Hydro.webp" alt="elemen hydro" />
+                    <p>Pemicu</p>
+                  </section>
+                  <section>
+                    <img src="/Element_Pyro.webp" alt="elemen pyro" />
+                    <p>Musuh</p>
+                  </section>
+                </section>
+                <section className="text-center text-sm font-medium">
+                  <p>Vaporize dipicu hydro</p>
+                  <p>Reaksi multiplier x 2</p>
+                </section>
               </section>
             </section>
+          </section>
+        </section>
 
-            <section className="flex w-fit flex-col gap-2">
-              <section className="flex w-fit gap-20">
-                <section>
-                  <img src="/Element_Hydro.webp" alt="elemen hydro" />
-                  <p>Pemicu</p>
+        <section>
+          <section>
+            <h1 className="pt-10 font-medium text-2xl">Reaksi Melt</h1>
+            <p className="mt-4">
+              Reaksi melt terjadi jika element cryo bertemu dengan element pyro
+              (<strong>Reverse melt</strong>) atau element pyro bertemu dengan
+              element cyro (<strong>Forward melt</strong>){" "}
+            </p>
+          </section>
+
+          <section className="flex justify-center mt-10">
+            <section className="flex gap-10 flex-col">
+              <section className="flex w-fit flex-col gap-2">
+                <section className="flex w-fit gap-20">
+                  <section>
+                    <img src="/public/Element_Cryo.webp" alt="elemen cryo" />
+                    <p>Pemicu</p>
+                  </section>
+                  <section>
+                    <img src="/public/Element_Pyro.webp" alt="elemen pyro" />
+                    <p>Musuh</p>
+                  </section>
                 </section>
-                <section>
-                  <img src="/Element_Pyro.webp" alt="elemen pyro" />
-                  <p>Musuh</p>
+                <section className="text-center text-sm font-medium">
+                  <p>Melt dipicu cryo</p>
+                  <p>Reaksi multiplier x 1.5</p>
                 </section>
               </section>
-              <section className="text-center text-sm font-medium">
-                <p>Vaporize dipicu hydro</p>
-                <p>Reaksi multiplier x 2</p>
+
+              <section className="flex w-fit flex-col gap-2">
+                <section className="flex w-fit gap-20">
+                  <section>
+                    <img src="/Element_Pyro.webp" alt="elemen pyro" />
+                    <p>Pemicu</p>
+                  </section>
+                  <section>
+                    <img src="/Element_Cryo.webp" alt="elemen cryo" />
+                    <p>Musuh</p>
+                  </section>
+                </section>
+                <section className="text-center text-sm font-medium">
+                  <p>Melt dipicu pyro</p>
+                  <p>Reaksi multiplier x 2</p>
+                </section>
               </section>
             </section>
           </section>
@@ -103,7 +156,7 @@ const Vaporize = () => {
           <section className="p-10 min-w-screen-sm overflow-x-scroll geser:overflow-auto">
             <PlotlyScatter
               data={data1}
-              title={"Grafik Deminishing Return Vaporize"}
+              title={"Grafik Deminishing Return Amplifying Reaction"}
               nameHorizontal={"Elemental mastery"}
               nameVertikal={"Peningkatan"}
             />
